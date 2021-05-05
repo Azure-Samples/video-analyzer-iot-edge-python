@@ -1,0 +1,220 @@
+{
+  "$schema-template": "2.0.0",
+  "modulesContent": {
+    "$edgeAgent": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "runtime": {
+          "type": "docker",
+          "settings": {
+            "minDockerVersion": "v1.25",
+            "loggingOptions": "",
+            "registryCredentials": {}
+          }
+        },
+        "systemModules": {
+          "edgeAgent": {
+            "type": "docker",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-agent:1.1",
+              "createOptions": {}
+            }
+          },
+          "edgeHub": {
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-hub:1.1",
+              "createOptions": {
+                "HostConfig": {
+                  "PortBindings": {
+                    "5671/tcp": [
+                      {
+                        "HostPort": "5671"
+                      }
+                    ],
+                    "8883/tcp": [
+                      {
+                        "HostPort": "8883"
+                      }
+                    ],
+                    "443/tcp": [
+                      {
+                        "HostPort": "443"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "env": {
+              "UpstreamProtocol": {
+                "value": "AMQPWS"
+              }
+            }
+          }
+        },
+        "modules": {
+          "avaedge": {
+            "version": "1.1",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/ava-utilities/ava_edge:1.0.01573.2656",
+              "createOptions": {
+                "HostConfig": {
+                  "LogConfig": {
+                    "Type": "",
+                    "Config": {
+                      "max-size": "10m",
+                      "max-file": "10"
+                    }
+                  },
+                  "Binds": [
+                    "$VIDEO_OUTPUT_FOLDER_ON_DEVICE:/var/media/",
+                    "$APPDATA_FOLDER_ON_DEVICE:/var/lib/videoanalyzer"
+                  ],
+                  "IpcMode": "host",
+                  "ShmSize": 1536870912
+                }
+              }
+            }
+          },
+          "avaextension": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/ava-utilities/avaextension:grpc-yolov3-onnx-v1.0",
+              "createOptions": {
+                "HostConfig": {
+                  "IpcMode": "host"
+                }
+              }
+            }
+          },
+          "rtspsim": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/ava-utilities/rtspsim-live555:1.2",
+              "createOptions": {
+                "HostConfig": {
+                  "Mounts": [
+                    {
+                      "Target": "/live/mediaServer/media",
+                      "Source": "media",
+                      "Type": "volume"
+                    }
+                  ],
+                  "PortBindings": {
+                    "554/tcp": [
+                      {
+                        "HostPort": "554"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "spatialanalysis": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "rtptofficial.azurecr.io/spatialanalysis-ava:1.0.1581.121",
+              "createOptions": {
+                "HostConfig": {
+                  "PortBindings": {
+                    "50051/tcp": [
+                      {
+                        "HostPort": "50051"
+                      }
+                    ]
+                  },
+                  "IpcMode": "host",
+                  "Binds": ["/tmp/.X11-unix:/tmp/.X11-unix"],
+                  "Runtime": "nvidia",
+                  "ShmSize": 536870912,
+                  "LogConfig": {
+                    "Type": "json-file",
+                    "Config": {
+                      "max-size": "10m",
+                      "max-file": "200"
+                    }
+                  }
+                }
+              }
+            },
+            "env": {
+              "DISPLAY": {
+                "value": ":0"
+              },
+              "ARCHON_SHARED_BUFFER_LIMIT": {
+                "value": "377487360"
+              },
+              "ARCHON_LOG_LEVEL": {
+                "value": "info"
+              },
+              "QT_X11_NO_MITSHM": {
+                "value": "1"
+              },
+              "OMP_WAIT_POLICY": {
+                "value": "PASSIVE"
+              },
+              "EULA": {
+                "value": "accept"
+              },
+              "ARCHON_TELEMETRY_IOTHUB": {
+                "value": "true"
+              },
+              "BILLING": {
+                "value": "https://spatial-analysis.cognitiveservices.azure.com/"
+              },
+              "APIKEY": {
+                "value": "5a7d3ebd0a224e8ab838799fc8685521"
+              },
+              "LAUNCHER_TYPE": {
+                "value": "avaBackend"
+              },
+              "ARCHON_GRAPH_READY_TIMEOUT": {
+                "value": "600"
+              }
+            }
+          }
+        }
+      }
+    },
+    "$edgeHub": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "routes": {
+          "AVAToHub": "FROM /messages/modules/avaedge/outputs/* INTO $upstream"
+        },
+        "storeAndForwardConfiguration": {
+          "timeToLiveSecs": 7200
+        }
+      }
+    },
+    "avaedge": {
+      "properties.desired": {
+        "applicationDataDirectory": "/var/lib/videoAnalyzer",
+        "ProvisioningToken": "$AVA_PROVISIONING_TOKEN",
+        "diagnosticsEventsOutputName": "diagnostics",
+        "operationalEventsOutputName": "operational",
+        "logLevel": "information",
+        "logCategories": "application",
+        "debugLogsDirectory": "/tmp/logs",
+        "allowUnsecuredEndpoints": true,
+        "telemetryOptOut": false
+      }
+    }
+  }
+}
