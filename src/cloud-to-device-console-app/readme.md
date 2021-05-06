@@ -61,7 +61,7 @@ Detailed instructions for running the sample can be found in the tutorials for A
 
 ## Troubleshooting
 
-See the [Live Video Analytics Troubleshooting page](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/troubleshoot-how-to).
+See the [Azure Video Analyzer Troubleshooting page](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/troubleshoot-how-to).
 
 ## Next steps
 

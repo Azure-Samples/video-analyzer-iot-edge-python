@@ -13,7 +13,7 @@ def read_url(url):
     resp = urllib.request.urlopen(url, context=ssl._create_unverified_context())
     return resp.read()
 
-class GraphManager:
+class LivePipelineManager:
     
     def __init__(self):
         config_data = pathlib.Path('appsettings.json').read_text()
@@ -27,7 +27,7 @@ class GraphManager:
 
     def invoke(self, method_name, payload):
         if method_name=='pipelineTopologySet':
-            self.graph_topology_set(payload)
+            self.pipeline_topology_set(payload)
             return
 
         if method_name=='WaitForInput':
@@ -56,7 +56,7 @@ class GraphManager:
         if resp.payload is not None:
             print(json.dumps(resp.payload, indent=4))
 
-    def graph_topology_set(self, op_parameters):
+    def pipeline_topology_set(self, op_parameters):
         if op_parameters is None:
             raise Exception('Operation parameters missing')
 
@@ -74,7 +74,7 @@ class GraphManager:
 
 
 if __name__ == '__main__':
-    manager = GraphManager()
+    manager = LivePipelineManager()
     
     operations_data_json = pathlib.Path('operations.json').read_text()
     operations_data = json.loads(operations_data_json)

@@ -24,16 +24,16 @@
         {
             "opName": "pipelineTopologySet",
             "opParams": {
-                "pipelineTopologyFile": "topology.json"
+                "pipelineTopologyFile": "https://<update_url_to_topology.json>"
             }
         },
         {
             "opName": "livePipelineSet",
             "opParams": {
-                "name": "Sample-Graph-1",
+                "name": "Sample-LivePipeline-1",
                 "properties": {
-                    "topologyName": "EVRtoAssetsOnObjDetect",
-                    "description": "Sample graph description",
+                    "topologyName": "TopologyName",
+                    "description": "Sample description",
                     "parameters": [
                         {
                             "name": "rtspUrl",
@@ -54,7 +54,7 @@
         {
             "opName": "livePipelineActivate",
             "opParams": {
-                "name": "Sample-Graph-1"
+                "name": "Sample-LivePipeline-1"
             }
         },
         {
@@ -70,13 +70,13 @@
         {
             "opName": "livePipelineDeactivate",
             "opParams": {
-                "name": "Sample-Graph-1"
+                "name": "Sample-LivePipeline-1"
             }
         },
         {
             "opName": "livePipelineDelete",
             "opParams": {
-                "name": "Sample-Graph-1"
+                "name": "Sample-LivePipeline-1"
             }
         },
         {
@@ -92,7 +92,7 @@
         {
             "opName": "pipelineTopologyDelete",
             "opParams": {
-                "name": "EVRtoAssetsOnObjDetect"
+                "name": "TopologyName"
             }
         },
         {
