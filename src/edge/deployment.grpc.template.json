@@ -63,7 +63,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/ava-utilities/ava_edge:1.0.01573.2656",
+              "image": "mcr.microsoft.com/media/azure-video-analyzer:1",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {
