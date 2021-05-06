@@ -4,7 +4,6 @@ languages:
   - python
 products:
   - azure
-  - azure-media-services
   - azure-video-analyzer
 description: "The samples in this repo show how to use the Azure Video Analyzer that enables you to capture, record, and analyze videos using AI."  
 ---
