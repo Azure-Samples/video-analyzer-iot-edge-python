@@ -64,7 +64,7 @@ Follow instructions outlined in **src/cloud-to-device-console-app/readme.md** to
 
 ## Key concepts
 
-Read [Azure Video Analyzer concepts](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/overview)
+Read [Azure Video Analyzer concepts](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/overview)
 
 ## Code of conduct
 
