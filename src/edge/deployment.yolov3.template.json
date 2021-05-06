@@ -81,7 +81,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/ava-utilities/yolov3-onnx:1.0",
+              "image": "mcr.microsoft.com/lva-utilities/yolov3-onnx:1.0",
               "createOptions": {}
             }
           },
@@ -91,7 +91,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/ava-utilities/rtspsim-live555:1.2",
+              "image": "mcr.microsoft.com/lva-utilities/rtspsim-live555:1.2",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {

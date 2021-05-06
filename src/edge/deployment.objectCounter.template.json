@@ -9,7 +9,13 @@
           "settings": {
             "minDockerVersion": "v1.25",
             "loggingOptions": "",
-            "registryCredentials": {}
+            "registryCredentials": {
+              "$CONTAINER_REGISTRY_USERNAME_myacr": {
+                "username": "$CONTAINER_REGISTRY_USERNAME_myacr",
+                "password": "$CONTAINER_REGISTRY_PASSWORD_myacr",
+                "address": "$CONTAINER_REGISTRY_USERNAME_myacr.azurecr.io"
+              }
+            }
           }
         },
         "systemModules": {
@@ -81,7 +87,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/ava-utilities/yolov3-onnx:1.0",
+              "image": "mcr.microsoft.com/lva-utilities/yolov3-onnx:1.0",
               "createOptions": ""
             }
           },
@@ -91,7 +97,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/ava-utilities/rtspsim-live555:1.2",
+              "image": "mcr.microsoft.com/lva-utilities/rtspsim-live555:1.2",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {

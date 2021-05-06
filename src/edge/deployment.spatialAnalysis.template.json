@@ -88,7 +88,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/ava-utilities/avaextension:grpc-yolov3-onnx-v1.0",
+              "image": "mcr.microsoft.com/lva-utilities/avaextension:grpc-yolov3-onnx-v1.0",
               "createOptions": {
                 "HostConfig": {
                   "IpcMode": "host"
@@ -102,7 +102,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/ava-utilities/rtspsim-live555:1.2",
+              "image": "mcr.microsoft.com/lva-utilities/rtspsim-live555:1.2",
               "createOptions": {
                 "HostConfig": {
                   "Mounts": [
@@ -129,7 +129,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "rtptofficial.azurecr.io/spatialanalysis-ava:1.0.1581.121",
+              "image": "mcr.microsoft.com/azure-cognitive-services/vision/spatial-analysis:1.4",
               "createOptions": {
                 "HostConfig": {
                   "PortBindings": {
