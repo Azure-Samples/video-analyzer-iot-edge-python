@@ -6,12 +6,12 @@ products:
   - azure
   - azure-media-services
   - azure-video-analyzer
-description: "The samples in this repo show how to use the Azure Video Analyzer on IoT Edge that enables you to capture, record, and analyze videos using AI."  
+description: "The samples in this repo show how to use the Azure Video Analyzer that enables you to capture, record, and analyze videos using AI."  
 ---
 
-# Azure Video Analyzer on IoT Edge samples
+# Azure Video Analyzer samples
 
-This repo provides Python samples for Azure Video Analyzer on IoT Edge
+This repo provides Python samples for Azure Video Analyzer
 
 ## Contents
 
@@ -26,8 +26,8 @@ This repo provides Python samples for Azure Video Analyzer on IoT Edge
 
 The 'src' folder contains three sub-folders
 
-* **cloud-to-device-console-app** - This folder contains a Python app that enables you to invoke direct methods of Azure Video Analyzer on IoT Edge module, with parameters defined by you in a JSON file (operations.json).
-* **edge** - This folder has a few IoT Edge deployment manifest templates, along with sample code for an IoT Edge module (under 'modules' folder) that can be used in conjunction with the Azure Video Analyzer on IoT Edge module.
+* **cloud-to-device-console-app** - This folder contains a Python app that enables you to invoke direct methods of Azure Video Analyzer module, with parameters defined by you in a JSON file (operations.json).
+* **edge** - This folder has a few IoT Edge deployment manifest templates, along with sample code for an IoT Edge module (under 'modules' folder) that can be used in conjunction with the Azure Video Analyzer module.
 
 ## Prerequisites
 
@@ -50,8 +50,10 @@ The 'src' folder contains three sub-folders
 
 5. [Docker](https://docs.docker.com/engine/install/) on your development machine
 
-> [!TIP]
-> You can use the [AVA resources setup script](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) to deploy the Azure resources mentioned above, along with an Azure Linux VM to serve as your IoT Edge device.
+Set up Azure resources:
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/ava-click-to-deploy)
+
 
 ## Setup
 
@@ -63,7 +65,7 @@ Follow instructions outlined in **src/cloud-to-device-console-app/readme.md** to
 
 ## Key concepts
 
-Read [Azure Video Analyzer on IoT Edge concepts](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/overview)
+Read [Azure Video Analyzer concepts](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/overview)
 
 ## Code of conduct
 
