@@ -24,7 +24,7 @@
         {
             "opName": "pipelineTopologySet",
             "opParams": {
-                "pipelineTopologyFile": "https://<update_url_to_topology.json>"
+                "pipelineTopologyUrl": "https://<update_url_to_topology.json>"
             }
         },
         {
