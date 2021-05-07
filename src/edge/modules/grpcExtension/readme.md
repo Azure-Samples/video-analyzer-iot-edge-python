@@ -1,6 +1,6 @@
 # gRPC Server
 
-This gRPC server enables your own IoT Edge module to accept video frames as [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages and return results back to AVA using the [inference metadata schema](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/inference-metadata-schema) defined by AVA.
+This gRPC server enables your own IoT Edge module to accept video frames as [protobuf](https://github.com/Azure/video-analyzer/treemainr/contracts/grpc) messages and return results back to AVA using the [inference metadata schema](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/inference-metadata-schema) defined by AVA.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ This gRPC server enables your own IoT Edge module to accept video frames as [pro
 
 ### Design
 
-This gRPC server is a Python terminal application that will house your custom AI and is built to handle the [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages sent between AVA and your custom AI. AVA sends a media stream descriptor which defines what information will be sent followed by video frames to the server as a [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) message over the gRPC stream session. The server validates the stream descriptor, analyses the video frame, processes it using an Image Processor, and returns inference results as a [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) message. 
+This gRPC server is a Python terminal application that will house your custom AI and is built to handle the [protobuf](https://github.com/Azure/video-analyzer/tree/main/contracts/grpc) messages sent between AVA and your custom AI. AVA sends a media stream descriptor which defines what information will be sent followed by video frames to the server as a [protobuf](https://github.com/Azure/video-analyzer/tree/main/contracts/grpc) message over the gRPC stream session. The server validates the stream descriptor, analyses the video frame, processes it using an Image Processor, and returns inference results as a [protobuf](https://github.com/Azure/video-analyzer/tree/main/contracts/grpc) message. 
 The frames can be transferred through shared memory or they can be embedded in the message. The date transfer mode can be configured in the pipelineTopology to determine how frames will be transferred.
 
 *main.py*: this is the entry point of the application. It is responsible for the configuring and management of the gRPC server.
@@ -25,7 +25,7 @@ In this method we:
 4. Set the address and port the gRPC server will listen on for client requests.
 5. Initialize the gRPC server.
 
-*inference_server.py*: this class is responsible for handling the  [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages communication with the AVA client. 
+*inference_server.py*: this class is responsible for handling the  [protobuf](https://github.com/Azure/video-analyzer/tree/main/contracts/grpc) messages communication with the AVA client. 
 
 ```
 ProcessMediaStream(self, requestIterator, context)
@@ -176,10 +176,6 @@ gRPC extension module:
 }
 ```
 
-**Note:** You will need to update the **apiVersion** parmater as well when using AVA module.
-```
-"@apiVersion": "1.0"
-```
 
 ## Upload Docker image to Azure container registry
 
