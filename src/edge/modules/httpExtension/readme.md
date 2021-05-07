@@ -64,7 +64,7 @@ Let's decompose it a bit:
 * `-p`: the port the http extension server will listen on
 
 ### Updating references into pipelineTopologies, to target the Http inferencing container address
-The [pipelineTopology](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/httpExtension/2.0/topology.json) must define an inferencing URL:
+The [pipelineTopology](https://github.com/Azure/video-analyzer/tree/main/pipelines/live/topologies/httpExtension/2.0/topology.json) must define an inferencing URL:
 
 * Http Extension inferencing URL Parameter
 ```
@@ -79,13 +79,13 @@ The [pipelineTopology](https://github.com/Azure/live-video-analytics/blob/master
 ```
     "processors": [
       {
-        "@type": "#Microsoft.VideoAnalyzer.MediaGraphHttpExtension",
+        "@type": "#Microsoft.VideoAnalyzer.HttpExtension",
         "name": "inferenceClient",
         "endpoint": {
-          "@type": "#Microsoft.VideoAnalyzer.MediaGraphTlsEndpoint",
+          "@type": "#Microsoft.VideoAnalyzer.TlsEndpoint",
           "url": "${inferencingUrl}",
           "credentials": {
-            "@type": "#Microsoft.VideoAnalyzer.MediaGraphUsernamePasswordCredentials",
+            "@type": "#Microsoft.VideoAnalyzer.UsernamePasswordCredentials",
             "username": "${inferencingUserName}",
             "password": "${inferencingPassword}"
           }
