@@ -1,11 +1,11 @@
 # gRPC Server
 
-This gRPC server enables your own IoT Edge module to accept video frames as [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages and return results back to AVA using the [inference metadata schema](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/inference-metadata-schema) defined by AVA.
+This gRPC server enables your own IoT Edge module to accept video frames as [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages and return results back to AVA using the [inference metadata schema](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/inference-metadata-schema) defined by AVA.
 
 ## Prerequisites
 
 1. [Install Docker](https://docs.docker.com/desktop/#download-and-install) on your machine
-1. [Install IoT Edge Runtime](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge?tabs=linux)
+1. [Install IoT Edge Runtime](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge?tabs=linux)
 
 ### Design
 
@@ -55,7 +55,7 @@ First, a couple assumptions
 * Our local Docker container image is already loged into ACR.
 * In this sample, our ACR name is "myregistry". Your name may defer, so please update it properly in the following commands.
 
-> If you're unfamiliar with ACR or have any questions, please follow this [demo on building and pushing an image into ACR](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli).
+> If you're unfamiliar with ACR or have any questions, please follow this [demo on building and pushing an image into ACR](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-docker-cli).
 
 `cd` onto the grpc extension's root directory 
 
@@ -183,14 +183,14 @@ gRPC extension module:
 
 ## Upload Docker image to Azure container registry
 
-Follow instructions in [Push and Pull Docker images  - Azure Container Registry](http://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli) to save your image for later use on another machine.
+Follow instructions in [Push and Pull Docker images  - Azure Container Registry](http://docs.microsoft.com/azure/container-registry/container-registry-get-started-docker-cli) to save your image for later use on another machine.
 
 ## Deploy as an Azure IoT Edge module
 
-Follow instruction in [Deploy module from Azure portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-deploy-modules-portal) to deploy the container image as an IoT Edge module (use the IoT Edge module option).
+Follow instruction in [Deploy module from Azure portal](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-portal) to deploy the container image as an IoT Edge module (use the IoT Edge module option).
 
 ## gRPC server response
-Once the setup is complete and you instantiate the [gRPCExtension topology](https://github.com/Azure/video-analyzer/blob/master//topologies/grpcExtension/topology.json) using [our VSCode quickstart](https://aka.ms/ava-grpc-quickstart) or via Azure Portal, you will see JSON printed on your screen that looks something like this
+Once the setup is complete and you instantiate the [gRPCExtension topology](https://github.com/Azure/video-analyzer/tree/main/pipelines/live/topologies/grpcExtension/topology.json) using [our VSCode quickstart](https://aka.ms/ava-grpc-quickstart) or via Azure Portal, you will see JSON printed on your screen that looks something like this
 
 ```JSON
 {
