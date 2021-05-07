@@ -1,6 +1,6 @@
 # gRPC Server
 
-This gRPC server enables your own IoT Edge module to accept video frames as [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc) messages and return results back to AVA using the [inference metadata schema](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/inference-metadata-schema) defined by AVA.
+This gRPC server enables your own IoT Edge module to accept video frames as [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages and return results back to AVA using the [inference metadata schema](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/inference-metadata-schema) defined by AVA.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ This gRPC server enables your own IoT Edge module to accept video frames as [pro
 
 ### Design
 
-This gRPC server is a Python terminal application that will house your custom AI and is built to handle the [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc) messages sent between AVA and your custom AI. AVA sends a media stream descriptor which defines what information will be sent followed by video frames to the server as a [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc) message over the gRPC stream session. The server validates the stream descriptor, analyses the video frame, processes it using an Image Processor, and returns inference results as a [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc) message. 
+This gRPC server is a Python terminal application that will house your custom AI and is built to handle the [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages sent between AVA and your custom AI. AVA sends a media stream descriptor which defines what information will be sent followed by video frames to the server as a [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) message over the gRPC stream session. The server validates the stream descriptor, analyses the video frame, processes it using an Image Processor, and returns inference results as a [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) message. 
 The frames can be transferred through shared memory or they can be embedded in the message. The date transfer mode can be configured in the pipelineTopology to determine how frames will be transferred.
 
 *main.py*: this is the entry point of the application. It is responsible for the configuring and management of the gRPC server.
@@ -25,7 +25,7 @@ In this method we:
 4. Set the address and port the gRPC server will listen on for client requests.
 5. Initialize the gRPC server.
 
-*inference_server.py*: this class is responsible for handling the  [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc) messages communication with the AVA client. 
+*inference_server.py*: this class is responsible for handling the  [protobuf](https://github.com/Azure/video-analyzer/tree/master/contracts/grpc) messages communication with the AVA client. 
 
 ```
 ProcessMediaStream(self, requestIterator, context)
@@ -80,7 +80,7 @@ Let's decompose it a bit:
 * `-b`: the size of the batch
 
 ### Updating references into pipelineTopologies, to target the gRPC Extension Address
-The [pipelineTopology](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/motion-with-grpcExtension/topology.json) must define an gRPC Extension Address:
+The [pipelineTopology](https://github.com/Azure/video-analyzer/tree/main/pipelines/live/topologies/motion-with-grpcExtension/topology.json) must define an gRPC Extension Address:
 
 * gRPC Extension Address Parameter
 ```
@@ -94,13 +94,13 @@ The [pipelineTopology](https://github.com/Azure/live-video-analytics/blob/master
 * Configuration
 ```
 {
-    "@type": "#Microsoft.VideoAnalyzer.MediaGraphGrpcExtension",
+    "@type": "#Microsoft.VideoAnalyzer.GrpcExtension",
     "name": "grpcExtension",
     "endpoint": {
-        "@type": "#Microsoft.VideoAnalyzer.MediaGraphUnsecuredEndpoint",
+        "@type": "#Microsoft.VideoAnalyzer.UnsecuredEndpoint",
         "url": "${grpcExtensionAddress}",
         "credentials": {
-        "@type": "#Microsoft.VideoAnalyzer.MediaGraphUsernamePasswordCredentials",
+        "@type": "#Microsoft.VideoAnalyzer.UsernamePasswordCredentials",
         "username": "${grpcExtensionUserName}",
         "password": "${grpcExtensionPassword}"
         }
@@ -116,7 +116,7 @@ The [pipelineTopology](https://github.com/Azure/live-video-analytics/blob/master
         "height": "${frameHeight}"
         },
         "format": {
-          "@type": "#Microsoft.VideoAnalyzer.MediaGraphImageFormatRaw",
+          "@type": "#Microsoft.VideoAnalyzer.ImageFormatRaw",
           "pixelFormat": "${imageRawFormat}"
         }
     },
@@ -128,7 +128,7 @@ The [pipelineTopology](https://github.com/Azure/live-video-analytics/blob/master
 }
 ```
 
-The frames can be transferred through shared memory or they can be embedded in the message. The data transfer mode can be configured in the pipelineTopology to determine how frames will be transferred. This is achieved by configuring the dataTransfer element of the MediaGraphGrpcExtension as shown below:
+The frames can be transferred through shared memory or they can be embedded in the message. The data transfer mode can be configured in the pipelineTopology to determine how frames will be transferred. This is achieved by configuring the dataTransfer element of the GrpcExtension as shown below:
 
 Embedded:
 ```JSON
@@ -190,7 +190,7 @@ Follow instructions in [Push and Pull Docker images  - Azure Container Registry]
 Follow instruction in [Deploy module from Azure portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-deploy-modules-portal) to deploy the container image as an IoT Edge module (use the IoT Edge module option).
 
 ## gRPC server response
-Once the setup is complete and you instantiate the [gRPCExtension topology](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/grpcExtension/topology.json) using [our VSCode quickstart](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/analyze-live-video-use-your-grpc-model-quickstart?pivots=programming-language-csharp) or via Azure Portal, you will see JSON printed on your screen that looks something like this
+Once the setup is complete and you instantiate the [gRPCExtension topology](https://github.com/Azure/video-analyzer/blob/master//topologies/grpcExtension/topology.json) using [our VSCode quickstart](https://aka.ms/ava-grpc-quickstart) or via Azure Portal, you will see JSON printed on your screen that looks something like this
 
 ```JSON
 {
