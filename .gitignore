@@ -37,7 +37,7 @@ bld/
 #wwwroot/
 
 # Python3 venv environment folder
-.lvaedge/
+.avaedge/
 
 # Visual Studio 2017 auto generated files
 Generated\ Files/
