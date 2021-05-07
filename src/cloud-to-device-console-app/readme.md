@@ -29,9 +29,6 @@ Create a file named `appsettings.json` in this folder. Add the following text an
 * **deviceId** - Refers to your IoT Edge device ID (registered with your IoT hub)
 * **moduleId** - Refers to the module ID of AVA on IoT Edge module (when deployed to the IoT Edge device).
 
-Set up Azure resources:
-
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/ava-click-to-deploy)
 
 Create a file named `.env` in the `src/edge` folder and add the following text to it. Provide values for all variables.
 
@@ -46,6 +43,11 @@ APPDATA_FOLDER_ON_DEVICE="<a folder on your edge device used for storing applica
 CONTAINER_REGISTRY_USERNAME_myacr="<user name for your Azure Container Registry>"
 CONTAINER_REGISTRY_PASSWORD_myacr="<password for the registry>"
 ```
+
+Set up Azure resources:
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/ava-click-to-deploy) will generate the **appsettings.json** and **.env** file with values filled out.
+
 
 ## Running the sample from Visual Studio Code
 
