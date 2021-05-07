@@ -83,7 +83,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/lva-utilities/avaextension:grpc-yolov3-tiny-onnx-v1.0",
+              "image": "mcr.microsoft.com/lva-utilities/lvaextension:grpc-yolov3-tiny-onnx-v1.0",
               "createOptions": {
                 "HostConfig": {
                   "IpcMode": "host"
@@ -136,7 +136,7 @@
         "diagnosticsEventsOutputName": "diagnostics",
         "operationalEventsOutputName": "operational",
         "logLevel": "information",
-        "logCategories": "application",
+        "logCategories": "application, events",
         "debugLogsDirectory": "/tmp/logs",
         "allowUnsecuredEndpoints": true,
         "telemetryOptOut": false

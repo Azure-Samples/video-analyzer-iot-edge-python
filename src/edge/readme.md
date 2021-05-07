@@ -18,7 +18,7 @@ In addition to the moduels defined in deployment.template.json, this deployment 
 
 ### deployment.grpc.template.json  
 
-In addition to the modules defined in deployment.template.json, this deployment manifest template includes your [grpcExtension module](https://github.com/Azure-Samples/azure-video-analyzer-iot-edge-python/tree/master/src/edge/modules/grpcExtension). This IoT Edge module runs your custom AI behind a gRPC endpoint. 
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes your [grpcExtension module](https://github.com/Azure-Samples/azure-video-analyzer-iot-edge-python/tree/main/src/edge/modules/grpcExtension). This IoT Edge module runs your custom AI behind a gRPC endpoint. 
 
 ### deployment.customvision.template.json
 

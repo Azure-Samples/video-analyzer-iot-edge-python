@@ -23,7 +23,7 @@ This repo provides Python samples for Azure Video Analyzer
 | `SECURITY`           | Guidelines for reporting security issues   |
 | `CODE_OF_CONDUCT.md` | Open source code of conduct                |
 
-The 'src' folder contains three sub-folders
+The 'src' folder contains two sub-folders
 
 * **cloud-to-device-console-app** - This folder contains a Python app that enables you to invoke direct methods of Azure Video Analyzer module, with parameters defined by you in a JSON file (operations.json).
 * **edge** - This folder has a few IoT Edge deployment manifest templates, along with sample code for an IoT Edge module (under 'modules' folder) that can be used in conjunction with the Azure Video Analyzer module.
@@ -33,11 +33,15 @@ The 'src' folder contains three sub-folders
 1. An active Azure subscription
 2. Azure resources deployed in the Azure subscription
 
-    a. IoT Hub
+    a. Video Analyzer account
 
-    b. Storage Account
+    b. Storage account
+    
+    c. Managed Identity
 
-    c. Azure container registry
+    d. IoT Hub
+
+    e. Azure container registry
 
 3. A Linux edge device with [IoT Edge runtime](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
 
