@@ -29,8 +29,9 @@ Create a file named `appsettings.json` in this folder. Add the following text an
 * **deviceId** - Refers to your IoT Edge device ID (registered with your IoT hub)
 * **moduleId** - Refers to the module ID of AVA on IoT Edge module (when deployed to the IoT Edge device).
 
-> [!TIP]
-> Running [AVA resources setup script](https://github.com/Azure/live-video-analytics/tree/master/edge/setup), generates **appsettings.json** file with values pre-filled by the script.
+Set up Azure resources:
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/ava-click-to-deploy)
 
 Create a file named `.env` in the `src/edge` folder and add the following text to it. Provide values for all variables.
 
@@ -46,9 +47,6 @@ CONTAINER_REGISTRY_USERNAME_myacr="<user name for your Azure Container Registry>
 CONTAINER_REGISTRY_PASSWORD_myacr="<password for the registry>"
 ```
 
-> [!TIP]
-> Running [AVA resources setup script](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) generates the `.env` file with values pre-filled by the script.
-
 ## Running the sample from Visual Studio Code
 
 Detailed instructions for running the sample can be found in the tutorials for AVA on IoT Edge. Below is a summary of key steps. Make sure you have installed the required [prerequisites](./../../README.md#prerequisites).
@@ -61,7 +59,7 @@ Detailed instructions for running the sample can be found in the tutorials for A
 
 ## Troubleshooting
 
-See the [Azure Video Analyzer Troubleshooting page](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/troubleshoot-how-to).
+See the [Azure Video Analyzer Troubleshooting page](https://docs.microsoft.com/azure/azure-video-analyzer/troubleshoot-how-to).
 
 ## Next steps
 
