@@ -1,0 +1,4 @@
+## No specific version. Install latest. ##
+certifi
+azure-iot-device
+azure-iot-hub
