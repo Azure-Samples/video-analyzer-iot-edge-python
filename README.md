@@ -36,11 +36,11 @@ The 'src' folder contains two sub-folders
     a. Video Analyzer account
 
     b. Storage account
-
+    
     c. Managed Identity
 
     d. IoT Hub
-    
+
     e. Azure container registry
 
 3. A Linux edge device with [IoT Edge runtime](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
