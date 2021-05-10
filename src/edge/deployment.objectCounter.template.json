@@ -145,7 +145,7 @@
     "avaedge": {
       "properties.desired": {
         "ProvisioningToken": "$AVA_PROVISIONING_TOKEN",
-        "ApplicationDataDirectory": "/var/lib/videoanalyzer",
+        "applicationDataDirectory": "/var/lib/videoanalyzer",
         "DiagnosticsEventsOutputName": "diagnostics",
         "OperationalEventsOutputName": "operational",
         "LogLevel": "Verbose",
