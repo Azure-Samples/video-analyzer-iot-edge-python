@@ -61,7 +61,7 @@ Detailed instructions for running the sample can be found in the tutorials for A
 
 ## Troubleshooting
 
-See the [Azure Video Analyzer Troubleshooting page](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/troubleshoot).
+See the [Azure Video Analyzer Troubleshooting page](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/troubleshoot.md).
 
 ## Next steps
 
