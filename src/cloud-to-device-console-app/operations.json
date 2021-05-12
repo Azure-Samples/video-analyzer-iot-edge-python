@@ -30,7 +30,7 @@
         {
             "opName": "livePipelineSet",
             "opParams": {
-                "name": "Sample-LivePipeline-1",
+                "name": "Sample-Pipeline-1",
                 "properties": {
                     "topologyName": "TopologyName",
                     "description": "Sample description",
@@ -54,7 +54,7 @@
         {
             "opName": "livePipelineActivate",
             "opParams": {
-                "name": "Sample-LivePipeline-1"
+                "name": "Sample-Pipeline-1"
             }
         },
         {
@@ -70,13 +70,13 @@
         {
             "opName": "livePipelineDeactivate",
             "opParams": {
-                "name": "Sample-LivePipeline-1"
+                "name": "Sample-Pipeline-1"
             }
         },
         {
             "opName": "livePipelineDelete",
             "opParams": {
-                "name": "Sample-LivePipeline-1"
+                "name": "Sample-Pipeline-1"
             }
         },
         {
