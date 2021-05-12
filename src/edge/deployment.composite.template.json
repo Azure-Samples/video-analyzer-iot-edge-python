@@ -57,7 +57,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/media/azure-video-analyzer:1",
+              "image": "mcr.microsoft.com/media/video-analyzer:1",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {
