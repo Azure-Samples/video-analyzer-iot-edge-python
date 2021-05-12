@@ -33,7 +33,7 @@
                 "name": "Sample-Pipeline-1",
                 "properties": {
                     "topologyName": "TopologyName",
-                    "description": "Sample description",
+                    "description": "Sample pipeline description",
                     "parameters": [
                         {
                             "name": "rtspUrl",
