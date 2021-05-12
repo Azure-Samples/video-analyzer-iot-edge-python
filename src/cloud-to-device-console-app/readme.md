@@ -27,7 +27,7 @@ Create a file named `appsettings.json` in this folder. Add the following text an
 
 * **IoThubConnectionString** - Refers to the connection string of your IoT hub. This should have registry write and service connect access.
 * **deviceId** - Refers to your IoT Edge device ID (registered with your IoT hub)
-* **moduleId** - Refers to the module ID of AVA on IoT Edge module (when deployed to the IoT Edge device).
+* **moduleId** - Refers to the module id of Azure Video Analyzer edge module (when deployed to the IoT Edge device)
 
 
 Create a file named `.env` in the `src/edge` folder and add the following text to it. Provide values for all variables.
@@ -53,6 +53,7 @@ Set up Azure resources:
 
 Detailed instructions for running the sample can be found in the tutorials for AVA on IoT Edge. Below is a summary of key steps. Make sure you have installed the required [prerequisites](./../../README.md#prerequisites).
 
+* Open your local clone of this git repository in Visual Studio Code, have the [Azure Iot Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) extension installed. 
 * Right click on src/edge/deployment.template.json and select **“Generate Iot Edge deployment manifest”**. This will create an IoT Edge deployment manifest file in src/edge/config folder named deployment.amd64.json.
 * Right click on src/edge/config /deployment.amd64.json and select **"Create Deployment for single device"** and select the name of your edge device. This will trigger the deployment of the IoT Edge modules to your Edge device. You can view the status of the deployment in the Azure IoT Hub extension (expand 'Devices' and then 'Modules' under your IoT Edge device).
 * Right click on your edge device in Azure IoT Hub extension and select **"Start Monitoring Built-in Event Endpoint"**.
@@ -65,4 +66,4 @@ See the [Azure Video Analyzer Troubleshooting page](https://docs.microsoft.com/a
 
 ## Next steps
 
-Experiment with different sequence of Direct Method calls by modifying operations.json.
+Experiment with different [pipeline topologies](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/pipeline) by modifying `pipelineTopologyUrl` in operations.json.
