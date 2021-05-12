@@ -108,8 +108,7 @@
                     }
                   },
                   "Binds": [
-                    "$VIDEO_OUTPUT_FOLDER_ON_DEVICE:/var/media/",
-                    "$APPDATA_FOLDER_ON_DEVICE:/var/lib/videoanalyzer"
+                    "$VIDEO_INPUT_FOLDER_ON_DEVICE:/live/mediaServer/media"
                   ]
                 }
               }
@@ -145,7 +144,7 @@
     "avaedge": {
       "properties.desired": {
         "ProvisioningToken": "$AVA_PROVISIONING_TOKEN",
-        "applicationDataDirectory": "/var/lib/videoanalyzer",
+        "ApplicationDataDirectory": "/var/lib/videoanalyzer",
         "DiagnosticsEventsOutputName": "diagnostics",
         "OperationalEventsOutputName": "operational",
         "LogLevel": "Verbose",
