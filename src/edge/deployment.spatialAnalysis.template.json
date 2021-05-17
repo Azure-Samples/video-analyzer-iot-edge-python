@@ -176,10 +176,10 @@
                 "value": "true"
               },
               "BILLING": {
-                "value": "https://spatial-analysis.cognitiveservices.azure.com/"
+                "value": "<Use endpoint from Cognitive Services azure resource (overview page)>"
               },
               "APIKEY": {
-                "value": "5a7d3ebd0a224e8ab838799fc8685521"
+                "value": "<Use one key from Cognitive Services azure resource (keys page)>"
               },
               "LAUNCHER_TYPE": {
                 "value": "avaBackend"
