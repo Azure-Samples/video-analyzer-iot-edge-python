@@ -60,6 +60,8 @@ Detailed instructions for running the sample can be found in the tutorials for A
 * Install python dependencies from `requirements.txt`. This can be done by running `pip install -r src\cloud-to-device-console-app\requirements.txt`.
 * Select the "Cloud to Device - Console App" configuration in the run tab and start a debugging session (hit F5). You will start seeing some messages printed in the TERMINAL window. In the OUTPUT window, you will see messages that are being sent to the IoT Hub, by the AVAEdge module.
 
+❗**Note:** *When running the debugger with the cloud-to-device-console project, the default launch.json creates a configuration with the parameter "console": "internalConsole". This does not work since internalConsole does not allow keyboard input. Changing the parameter to "console" : "integratedTerminal" fixes the problem.*
+
 ## Troubleshooting
 
 See the [Azure Video Analyzer Troubleshooting page](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-docs/troubleshoot.md).
