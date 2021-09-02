@@ -20,4 +20,4 @@ COPY ./app/grpc-proto/*.py /app/
 # Starts the AVA gRPC extension server
 FROM base as final
 WORKDIR /app/
-ENTRYPOINT ["python3", "main.py"]
+CMD ["python3", "main.py"]
