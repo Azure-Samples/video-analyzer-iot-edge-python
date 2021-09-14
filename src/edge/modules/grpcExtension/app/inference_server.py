@@ -1,10 +1,9 @@
-import sys
 import logging
 import os
-import inferencing_pb2
 import media_pb2
 import extension_pb2
 import extension_pb2_grpc
+import inferencing_pb2
 from batchImageProcessor import BatchImageProcessor
 from enum import Enum
 from shared_memory import SharedMemoryManager
@@ -61,8 +60,6 @@ class InferenceServer(extension_pb2_grpc.MediaGraphExtensionServicer):
         except:
             PrintGetExceptionDetails()
             raise
-        
-        return None
 
     def get_image_details(self, clientState, mediaStreamMessageRequest):
         #Get media content bytes. (bytes sent over shared memory buffer, segment or inline to message)  
@@ -125,9 +122,6 @@ class InferenceServer(extension_pb2_grpc.MediaGraphExtensionServicer):
                                 )
         # Send acknowledge message to client    
         yield mediaStreamMessage
-
-        width = clientState._mediaStreamDescriptor.media_descriptor.video_frame_sample_format.dimensions.width
-        height = clientState._mediaStreamDescriptor.media_descriptor.video_frame_sample_format.dimensions.height
  
         # Process rest of the MediaStream message sequence
         messageCount = 0
@@ -136,7 +130,6 @@ class InferenceServer(extension_pb2_grpc.MediaGraphExtensionServicer):
             try:
                 # Read request id, sent by client
                 requestSeqNum = mediaStreamMessageRequest.sequence_number
-                timestamp = mediaStreamMessageRequest.media_sample.timestamp
                         
                 logging.info('[Received] SequenceNum: {0:07d}'.format(requestSeqNum))
 
@@ -146,11 +139,17 @@ class InferenceServer(extension_pb2_grpc.MediaGraphExtensionServicer):
 
                 if(messageCount < self.batchSize):
                     # Add images to batch and create acknowledge message
-                    logging.info('Adding image #{0} to batch.'.format(messageCount+1))
+                    msg = 'Adding image #{0} to batch.'.format(messageCount+1)
+                    logging.info(msg)
                     mediaStreamMessage = extension_pb2.MediaStreamMessage(
                                             sequence_number = responseSeqNum,
                                             ack_sequence_number = requestSeqNum
                                             )
+                    inference = mediaStreamMessage.media_sample.inferences.add()
+                    inference.subtype = 'BatchAggregation'
+                    event =  inferencing_pb2.Event(name=msg)
+                    inference.event.CopyFrom(event)
+                    
                     imageBatch.append(imageDetails)    
                     messageCount += 1
                 else:

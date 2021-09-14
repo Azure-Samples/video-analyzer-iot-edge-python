@@ -13,10 +13,8 @@ def Main():
     try:
         # Get application arguments
         parser = argparse.ArgumentParser()
-        parser.add_argument('-p', nargs=1, metavar=('grpc_server_port'),
-                                        help='Port number to serve gRPC server.', default=5001)
-        parser.add_argument('-b', nargs=1, metavar=('batch_size'),
-                                        help='Batch size.', default=1)
+        parser.add_argument('-p', metavar=('grpc_server_port'), help='Port number to serve gRPC server.', type=int, default=5001)
+        parser.add_argument('-b', metavar=('batch_size'), help='Batch size.', type=int, default=1)
     
         _arguments = parser.parse_args()
 
@@ -29,10 +27,17 @@ def Main():
         # Get port from environment variable (overrides argument)
         envPort = os.getenv('port')
 
+        # Get batch size from environment variable (overrides argument)
+        envBatchSize = os.getenv('batchSize')
+
         if(envPort is not None):
             grpcServerPort = envPort
+        
+        if(envBatchSize is not None):
+            batchSize = int(envBatchSize)
        
         logging.info('gRPC server port with: {0}'.format(grpcServerPort))
+        logging.info('Batch size set to: {0}'.format(batchSize))
 
         # create gRPC server and start running
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=3))
