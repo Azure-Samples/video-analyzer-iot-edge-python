@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+  outline: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 18px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+}
+
+.page_content {
+  padding: 10px;
+  width: 100%;
+}
+
+.player {
+  margin-top: 5px;
+  align-items: center;
+}
+
+.videolist {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.videolist label {
+  padding-right: 10px;
+}
+
+.videolist select {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.zone-output {
+  width: 85%;
+  resize: vertical;
+  min-height: 30px;
+  height: 30px;
+  font-size: 11pt;
+}
+
+.zoneInfo label {
+  margin-top: 10px;
+}
+
+.zonedrawer-container {
+ width: 85%;
+}
+
+.containerPlayback {
+ width: 85%;
+}
+
+.copyToClipboard {
+ margin-top: -15px;
+ margin-left: 10px;
+}
