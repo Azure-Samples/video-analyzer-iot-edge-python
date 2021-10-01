@@ -27,6 +27,7 @@ The 'src' folder contains two sub-folders
 
 * **cloud-to-device-console-app** - This folder contains a Python app that enables you to invoke direct methods of Azure Video Analyzer module, with parameters defined by you in a JSON file (operations.json).
 * **edge** - This folder has a few IoT Edge deployment manifest templates, along with sample code for an IoT Edge module (under 'modules' folder) that can be used in conjunction with the Azure Video Analyzer module.
+* **video-player** - This folder contains a ReactJS app that will enable you to view videos and create zones (line or polygon) using the AVA widget player.
 
 ## Prerequisites
 
