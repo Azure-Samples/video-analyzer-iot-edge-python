@@ -26,11 +26,15 @@ In addition to the modules defined in deployment.template.json, this deployment 
 
 ### deployment.grpcyolov3icpu.template.json  
 
-In addition to the modules defined in deployment.template.json, this deployment manifest template includes this [yolov3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/grpc-cpu). This IoT Edge module runs the YoloV3 ONNX model behind a gRPC endpoint. This template is used in [this](https://aka.ms/ava-grpc-quickstart) quickstart.
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes this [YOLOv3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/grpc-cpu). This IoT Edge module runs the YOLOv3 ONNX model behind a gRPC endpoint. This template is used in [this](https://aka.ms/ava-grpc-quickstart) quickstart.
+
+### deployment.grpcyolov3ngpu.template.json  
+
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes this [GPU-optimized YOLOv3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/grpc-gpu). This IoT Edge module runs the YOLOv3 ONNX model behind a gRPC endpoint and is optimized to run on edge devices with an Nvidia GPU. To run this deployment manifest, the edge device must have Nvidia's CUDA drivers installed, as shown in this [section of the documentation](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/grpc-gpu).
 
 ### deployment.grpctinyyolov3icpu.template.json  
 
-In addition to the modules defined in deployment.template.json, this deployment manifest template includes this [tinyyolov3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/tinyyolov3/grpc-cpu). This IoT Edge module runs the TinyYoloV3 ONNX model behind a gRPC endpoint. This template is used in [this](https://aka.ms/ava-grpc-quickstart) quickstart.
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes this [TinyYOLOv3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/tinyyolov3/grpc-cpu). This IoT Edge module runs the TinyYOLOv3 ONNX model behind a gRPC endpoint. 
 
 ### deployment.objectCounter.template.json
 
@@ -46,11 +50,11 @@ In addition to the modules defined in deployment.template.json, this deployment 
 
 ### deployment.yolov3.template.json
 
-In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [yolov3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/http-cpu). This is an IoT Edge module that runs the YoloV3 ONNX model behind an HTTP endpoint.
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [YOLOv3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/http-cpu). This is an IoT Edge module that runs the YoloV3 ONNX model behind an HTTP endpoint.
 
 ### deployment.composite.template.json
 
-In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [yolov3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/grpc-cpu) and the [tinyyolov3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/tinyyolov3/grpc-cpu). This is an IoT Edge module that runs both the YoloV3 ONNX and Tiny YoloV3 ONNX models behind gRPC endpoints.
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [YOLOv3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/yolov3/grpc-cpu) and the [tinyyolov3 module](https://github.com/Azure/video-analyzer/tree/main/edge-modules/extensions/yolo/tinyyolov3/grpc-cpu). This is an IoT Edge module that runs both the YOLOv3 ONNX and Tiny YOLOv3 ONNX models behind gRPC endpoints.
 
 ## Deployment manifest template variables
 
@@ -74,7 +78,7 @@ To generate a deployment manifest from the template, open your local clone of th
 
 ### objectCounter
 
-The folder **./modules/objectCounter** contains source code for an IoT Edge module that counts objects of a specified type and with a confidence above a specified threshold value (these are specified as twin properties in deployment.objectCounter.template.json). The module expects messages emitted by yolov3 module (referenced above).
+The folder **./modules/objectCounter** contains source code for an IoT Edge module that counts objects of a specified type and with a confidence above a specified threshold value (these are specified as twin properties in deployment.objectCounter.template.json). The module expects messages emitted by YOLOv3 module (referenced above).
 
 ### httpExtension
 
