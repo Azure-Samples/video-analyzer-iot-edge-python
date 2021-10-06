@@ -82,20 +82,6 @@
               }
             }
           },
-          "avaextension": {
-            "version": "1.0",
-            "type": "docker",
-            "status": "running",
-            "restartPolicy": "always",
-            "settings": {
-              "image": "mcr.microsoft.com/lva-utilities/lvaextension:grpc-yolov3-onnx-v1.0",
-              "createOptions": {
-                "HostConfig": {
-                  "IpcMode": "host"
-                }
-              }
-            }
-          },
           "rtspsim": {
             "version": "1.0",
             "type": "docker",
