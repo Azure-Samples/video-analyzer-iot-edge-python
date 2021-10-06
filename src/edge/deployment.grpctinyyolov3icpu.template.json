@@ -83,7 +83,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/lva-utilities/lvaextension:grpc-yolov3-tiny-onnx-v1.0",
+              "image": "mcr.microsoft.com/ava-utilities/avaextension:grpc-yolov3-tiny-onnx-v1.0",
               "createOptions": {
                 "HostConfig": {
                   "IpcMode": "host"
@@ -97,7 +97,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/lva-utilities/rtspsim-live555:1.2",
+              "image": "mcr.microsoft.com/ava-utilities/rtspsim-live555:1.2",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {
