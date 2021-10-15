@@ -57,7 +57,7 @@
           },
           "modules": {
             "avaedge": {
-              "version": "1.1",
+              "version": "1.0",
               "type": "docker",
               "status": "running",
               "restartPolicy": "always",
@@ -165,10 +165,10 @@
                   "value": "true"
                 },
                 "BILLING": {
-                  "value": "https://avaspatialanaylsis.cognitiveservices.azure.com/"
+                  "value": "<Use endpoint from Cognitive Services azure resource (overview page)>"
                 },
                 "APIKEY": {
-                  "value": "5964e5d47b1248e8bf8d8ddd7b90ba41"
+                  "value": "<Use one key from Cognitive Services azure resource (keys page)>"
                 },
                 "LAUNCHER_TYPE": {
                   "value": "avaBackend"
