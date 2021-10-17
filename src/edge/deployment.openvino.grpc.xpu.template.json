@@ -36,7 +36,7 @@
         },
         "modules": {
           "avaedge": {
-            "version": "1.1",
+            "version": "1.0",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
@@ -62,7 +62,7 @@
             }
           },
           "avaextension": {
-            "version": "1.1",
+            "version": "1.0",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
