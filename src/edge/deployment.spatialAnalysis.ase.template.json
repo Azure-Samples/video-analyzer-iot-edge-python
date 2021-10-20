@@ -162,10 +162,10 @@
                 "value": "true"
               },
               "BILLING": {
-                "value": "<Use Endpoint from Cognitive Services azure resource (Keys and Endpoint blade)>"
+                "value": "<Use Endpoint from Computer Vision resource (Keys and Endpoint blade)>"
               },
               "APIKEY": {
-                "value": "<Use one key from Cognitive Services azure resource (Keys and Endpoint blade)>"
+                "value": "<Use one key from Computer Vision resource (Keys and Endpoint blade)>"
               },
               "LAUNCHER_TYPE": {
                 "value": "avaBackend"
