@@ -44,13 +44,13 @@ In addition to the modules defined in deployment.yolov3.template.json, this depl
 
 In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [OpenVINO™ Model Server – AI Extension](https://aka.ms/ava-intel-ovms) module. This inference server module contains the OpenVINO™ Model Server (OVMS), an inference server powered by the OpenVINO™ toolkit, that is highly optimized for computer vision workloads and developed for Intel architectures. This template is used in [this](https://aka.ms/ava-intel-ovms-tutorial) tutorial.
 
+### deployment.spatialAnalysis.ase.template.json  
+
+In addition to the modules defined in deployment.ase.template.json, this deployment manifest template includes the [Computer Vision for spatial analysis AI module from Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-container?tabs=azure-stack-edge). This module supports operations that enable you to count people in a designated zone within the camera’s field of view, to track when a person crosses a designated line or area, or when people violate a distance rule. This template is used in [this](https://aka.ms/ava-spatial-analysis) tutorial while using Azure Stack Edge device.
+
 ### deployment.spatialAnalysis.generic.template.json  
 
 In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [Computer Vision for spatial analysis AI module from Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-container?tabs=azure-stack-edge). This module supports operations that enable you to count people in a designated zone within the camera’s field of view, to track when a person crosses a designated line or area, or when people violate a distance rule. This template is used in [this](https://aka.ms/ava-spatial-analysis) tutorial while using a desktop machine or Azure VM.
-
-### deployment.spatialAnalysis.template.json  
-
-In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [Computer Vision for spatial analysis AI module from Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-container?tabs=azure-stack-edge). This module supports operations that enable you to count people in a designated zone within the camera’s field of view, to track when a person crosses a designated line or area, or when people violate a distance rule. This template is used in [this](https://aka.ms/ava-spatial-analysis) tutorial while using Azure Stack Edge device.
 
 ### deployment.yolov3.template.json
 
