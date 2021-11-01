@@ -74,7 +74,7 @@
                     },
                     "Binds": [
                       "$VIDEO_OUTPUT_FOLDER_ON_DEVICE:/var/media/",
-                      "$APPDATA_FOLDER_ON_DEVICE:/var/lib/videoanalyzernew"
+                      "$APPDATA_FOLDER_ON_DEVICE:/var/lib/videoanalyzer"
                     ],
                     "IpcMode": "host",
                     "ShmSize": 1536870912
@@ -165,10 +165,10 @@
                   "value": "true"
                 },
                 "BILLING": {
-                  "value": "<Use endpoint from Cognitive Services azure resource (overview page)>"
+                  "value": "<Use Endpoint from Computer Vision resource (Keys and Endpoint blade)>"
                 },
                 "APIKEY": {
-                  "value": "<Use one key from Cognitive Services azure resource (keys page)>"
+                  "value": "<Use one key from Computer Vision resource (Keys and Endpoint blade)>"
                 },
                 "LAUNCHER_TYPE": {
                   "value": "avaBackend"
@@ -194,12 +194,12 @@
       },
       "avaedge": {
         "properties.desired": {
-          "applicationDataDirectory": "/var/lib/videoanalyzernew",
+          "applicationDataDirectory": "/var/lib/videoanalyzer",
           "ProvisioningToken": "$AVA_PROVISIONING_TOKEN",
           "diagnosticsEventsOutputName": "diagnostics",
           "operationalEventsOutputName": "operational",
-          "logLevel": "Verbose",
-          "logCategories": "Application,Events,MediaPipeline",
+          "logLevel": "information",
+          "logCategories": "Application,Events",
           "debugLogsDirectory": "/tmp/logs",
           "allowUnsecuredEndpoints": true,
           "telemetryOptOut": false

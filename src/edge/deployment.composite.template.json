@@ -52,7 +52,7 @@
         },
         "modules": {
           "avaedge": {
-            "version": "1.1",
+            "version": "1.0",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
@@ -86,6 +86,13 @@
               "image": "mcr.microsoft.com/ava-utilities/avaextension:grpc-yolov3-onnx-v1.0",
               "createOptions": {
                 "HostConfig": {
+                   "LogConfig": {
+                    "Type": "",
+                    "Config": {
+                      "max-size": "10m",
+                      "max-file": "10"
+                    }
+                  },
                   "IpcMode": "host"
                 },
                 "Cmd": [
@@ -118,7 +125,13 @@
                     }
                   },
                   "IpcMode": "host"
-                }
+                },
+                "Cmd": [
+                  "python",
+                  "server.py",
+                  "-p",
+                  "33000"
+                ]
               }
             }
           },
@@ -166,7 +179,7 @@
         "diagnosticsEventsOutputName": "diagnostics",
         "operationalEventsOutputName": "operational",
         "logLevel": "information",
-        "logCategories": "application, events",
+        "logCategories": "application,events",
         "debugLogsDirectory": "/tmp/logs",
         "allowUnsecuredEndpoints": true,
         "telemetryOptOut": false
