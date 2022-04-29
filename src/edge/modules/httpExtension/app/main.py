@@ -20,7 +20,7 @@ def init_logging():
 
  # Get application arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('-p', nargs=1, metavar=('http_server_port'), help='Port number to listen on.', type=int, default=8080)
+parser.add_argument('-p', help='Port number to listen on.', type=int, default=8080)
 
 _arguments = parser.parse_args()
 
